@@ -1,0 +1,54 @@
+meta {
+  name: PUT USER
+  type: http
+  seq: 3
+}
+
+put {
+  url: https://api.github.com/users/{{usuario}}
+  body: json
+  auth: inherit
+}
+
+headers {
+  Content-Type: application/json
+}
+
+body:json {
+  {
+    "name": "Victor Hugo",
+    "bio": "Actualizado desde BRUNO"
+  }
+  
+}
+
+tests {
+  test("Status code should be 200", function () {
+      expect(res.getStatus()).to.equal(200);
+  });
+  
+  test("Name should be updated", function () {
+      const body = res.getBody();
+      expect(body.name).to.equal("Victor Hugo");
+  });
+  
+  test("Bio should be updated", function () {
+      const body = res.getBody();
+      expect(body.bio).to.equal("Actualizado desde BRUNO");
+  });
+  
+  test("Login should exist", function () {
+      const body = res.getBody();
+      expect(body.login).to.not.be.undefined;
+  });
+  
+  test("Response should contain id", function () {
+      const body = res.getBody();
+      expect(body.id).to.be.a("number");
+  });
+  
+}
+
+settings {
+  encodeUrl: true
+}

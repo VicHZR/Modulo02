@@ -1,0 +1,5 @@
+timeStamp,elapsed,label,responseCode,responseMessage,threadName,dataType,success,failureMessage,bytes,sentBytes,grpThreads,allThreads,URL,Latency,IdleTime,Connect
+1757401105337,489,HTTP Request,400,Bad Request,Repositories_ThreadGroup. 1-1,text,false,,1681,375,1,3,https://api.github.com/user/repos,488,0,297
+1757401105829,251,HTTP Request,200,OK,Repositories_ThreadGroup. 1-1,text,true,,7193,269,1,3,https://api.github.com/repos/VicHZR/Prueba1,250,0,0
+1757401106082,0,HTTP Request,Non HTTP response code: java.net.URISyntaxException,Non HTTP response message: Illegal character in path at index 36: https://api.github.com/repos/VicHZR/<EOF>,Repositories_ThreadGroup. 1-1,text,false,,1193,0,1,3,https://api.github.com/repos/VicHZR/<EOF>,0,0,0
+1757401106084,0,HTTP Request,Non HTTP response code: java.net.URISyntaxException,Non HTTP response message: Illegal character in path at index 36: https://api.github.com/repos/VicHZR/<EOF>,Repositories_ThreadGroup. 1-1,text,false,,1193,0,1,3,https://api.github.com/repos/VicHZR/<EOF>,0,0,0

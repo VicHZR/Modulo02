@@ -1,0 +1,56 @@
+meta {
+  name: Repos
+  type: http
+  seq: 2
+}
+
+post {
+  url: https://api.github.com/user/repos
+  body: json
+  auth: inherit
+}
+
+headers {
+  Content-Type: application/json
+  Accept: application/vnd.github+json
+  x-GitHub-Api-Version: 2022-11-28
+}
+
+body:json {
+  {
+    "name": "bruno-test-repo-01",
+    "description": "Repositorio creado desde Bruno",
+    "private": false
+  }
+  
+}
+
+tests {
+  test("Status code should be 201", function () {
+      expect(res.getStatus()).to.equal(201);
+  });
+  
+  test("Response should contain repo name", function () {
+      const body = res.getBody();
+      expect(body.name).to.equal("repositorio-prueba");
+  });
+  
+  test("Repo should not be private", function () {
+      const body = res.getBody();
+      expect(body.private).to.equal(false);
+  });
+  
+  test("Owner should match username", function () {
+      const body = res.getBody();
+      expect(body.owner.login).to.equal("Eunice17"); // reemplaza con tu username real
+  });
+  
+  test("Content-Type should be JSON", function () {
+      expect(res.getHeader("content-type")).to.include("application/json");
+  });
+  
+}
+
+settings {
+  encodeUrl: true
+}

@@ -1,0 +1,41 @@
+meta {
+  name: Listar repositorios del usuario
+  type: http
+  seq: 1
+}
+
+get {
+  url: https://api.github.com/users/{{usuario}}/repos
+  body: none
+  auth: inherit
+}
+
+headers {
+  Accept: application/vnd.github+json
+  X-GitHub-Api-Version: 2022-11-28
+}
+
+tests {
+  test("Status code should be 200", function () {
+      expect(res.getStatus()).to.equal(200);
+  });
+  
+  test("Response should be an array", function () {
+      const body = res.getBody();
+      expect(Array.isArray(body)).to.equal(true);
+  });
+  
+  test("First repo should have a name", function () {
+      const body = res.getBody();
+      expect(body[0]?.name).to.not.be.undefined;
+  });
+  
+  test("Content-Type should be JSON", function () {
+      expect(res.getHeader("content-type")).to.include("application/json");
+  });
+  
+}
+
+settings {
+  encodeUrl: true
+}

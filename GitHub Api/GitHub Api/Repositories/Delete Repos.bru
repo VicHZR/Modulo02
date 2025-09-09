@@ -1,0 +1,36 @@
+meta {
+  name: Delete Repos
+  type: http
+  seq: 4
+}
+
+delete {
+  url: https://api.github.com/repos/{{usuario}}/bruno-test-repo-01
+  body: none
+  auth: inherit
+}
+
+headers {
+  Accept: application/vnd.github+json
+}
+
+tests {
+  test("Status code should be 204", function () {
+      expect(res.getStatus()).to.equal(204);
+  });
+  
+  test("Response body should be empty", function () {
+      const body = res.getBody();
+      expect(body).to.be.empty;
+  });
+  
+  test("Content-Type should be JSON or empty", function () {
+      const contentType = res.getHeader("content-type") || "";
+      expect(contentType.includes("application/json") || contentType === "").to.equal(true);
+  });
+  
+}
+
+settings {
+  encodeUrl: true
+}

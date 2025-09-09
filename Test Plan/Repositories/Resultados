@@ -1,0 +1,5 @@
+timeStamp,elapsed,label,responseCode,responseMessage,threadName,dataType,success,failureMessage,bytes,sentBytes,grpThreads,allThreads,URL,Latency,IdleTime,Connect
+1757402910766,504,HTTP Request,200,OK,Repositories_ThreadGroup. 1-1,text,true,,7195,269,1,3,https://api.github.com/repos/VicHZR/Prueba1,503,0,254
+1757402911270,1226,HTTP Request,201,Created,Repositories_ThreadGroup. 1-1,text,true,,7255,389,1,2,https://api.github.com/user/repos,1225,0,0
+1757402912496,363,HTTP Request,200,OK,Repositories_ThreadGroup. 1-1,text,true,,7467,362,1,2,https://api.github.com/repos/VicHZR/repo-de-prueba,361,0,0
+1757402912859,385,HTTP Request,204,No Content,Repositories_ThreadGroup. 1-1,,true,,1448,298,1,1,https://api.github.com/repos/VicHZR/repo-de-prueba,0,0,0

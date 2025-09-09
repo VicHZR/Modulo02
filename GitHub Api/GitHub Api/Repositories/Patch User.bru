@@ -1,0 +1,54 @@
+meta {
+  name: Patch User
+  type: http
+  seq: 3
+}
+
+patch {
+  url: https://api.github.com/repos/{{usuario}}/{{repositorio}}
+  body: json
+  auth: inherit
+}
+
+headers {
+  Accept: application/vnd.github+json
+  Content-Type: application/json
+}
+
+body:json {
+  {
+    "name": "fastapi-ecommerce-demo",
+    "description": "Repositorio actualizado desde BRUNO"
+  }
+  
+}
+
+tests {
+  test("Status code should be 200", function () {
+      expect(res.getStatus()).to.equal(200);
+  });
+  
+  test("Response should be an object", function () {
+      const body = res.getBody();
+      expect(typeof body).to.equal("object");
+  });
+  
+  test("Repository name should match", function () {
+      const body = res.getBody();
+      expect(body.name).to.equal("nombre-repositorio"); // reemplaza con el nombre real
+  });
+  
+  test("Description should be updated", function () {
+      const body = res.getBody();
+      expect(body.description).to.equal("Repositorio actualizado desde BRUNO");
+  });
+  
+  test("Content-Type should be JSON", function () {
+      expect(res.getHeader("content-type")).to.include("application/json");
+  });
+  
+}
+
+settings {
+  encodeUrl: true
+}

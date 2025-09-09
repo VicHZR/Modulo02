@@ -1,0 +1,5 @@
+timeStamp,elapsed,label,responseCode,responseMessage,threadName,dataType,success,failureMessage,bytes,sentBytes,grpThreads,allThreads,URL,Latency,IdleTime,Connect
+1757402910766,416,HTTP Request,200,OK,Users_ThreadGroup 2-1,text,true,,3149,261,1,3,https://api.github.com/users/VicHZR,416,0,233
+1757402911183,258,HTTP Request,422,Unprocessable Entity,Users_ThreadGroup 2-1,text,false,,1678,305,1,3,https://api.github.com/user/emails,258,0,0
+1757402911441,296,HTTP Request,200,OK,Users_ThreadGroup 2-1,text,true,,3107,330,1,3,https://api.github.com/user,296,0,0
+1757402911738,203,HTTP Request,404,Not Found,Users_ThreadGroup 2-1,text,false,,1662,305,1,3,https://api.github.com/user/emails,203,0,0

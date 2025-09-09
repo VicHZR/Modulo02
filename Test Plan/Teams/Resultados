@@ -1,0 +1,5 @@
+timeStamp,elapsed,label,responseCode,responseMessage,threadName,dataType,success,failureMessage,bytes,sentBytes,grpThreads,allThreads,URL,Latency,IdleTime,Connect
+1757402910770,460,HTTP Request,200,OK,Teams Thread Group 3-1,text,true,,7195,269,1,3,https://api.github.com/repos/VicHZR/Prueba1,459,0,245
+1757402911231,959,HTTP Request,201,Created,Teams Thread Group 3-1,text,true,,7223,401,1,2,https://api.github.com/user/repos,958,0,0
+1757402912190,352,HTTP Request,200,OK,Teams Thread Group 3-1,text,true,,7436,374,1,2,https://api.github.com/repos/VicHZR/team-finanzas,350,0,0
+1757402912543,369,HTTP Request,204,No Content,Teams Thread Group 3-1,,true,,1448,297,1,2,https://api.github.com/repos/VicHZR/team-finanzas,0,0,0
